@@ -55,6 +55,7 @@
         buildable = true;
         modules = [
           "Language/PlutusTx/Coordination/Contracts"
+          "Language/PlutusTx/Coordination/Contracts/Auction"
           "Language/PlutusTx/Coordination/Contracts/TokenAccount"
           "Language/PlutusTx/Coordination/Contracts/Crowdfunding"
           "Language/PlutusTx/Coordination/Contracts/Currency"
@@ -111,6 +112,7 @@
             ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true || system.isGhcjs)) (hsPkgs."plutus-tx-plugin" or (errorHandler.buildDepError "plutus-tx-plugin"));
           buildable = true;
           modules = [
+            "Spec/Auction"
             "Spec/Crowdfunding"
             "Spec/Currency"
             "Spec/ErrorHandling"
@@ -164,6 +166,7 @@
             ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true || system.isGhcjs)) (hsPkgs."plutus-tx-plugin" or (errorHandler.buildDepError "plutus-tx-plugin"));
           buildable = true;
           modules = [
+            "Spec/Auction"
             "Spec/Crowdfunding"
             "Spec/Currency"
             "Spec/ErrorHandling"
